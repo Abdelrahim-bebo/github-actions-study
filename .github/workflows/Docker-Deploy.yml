@@ -1,6 +1,6 @@
 name: Docker-Deploy
 
-on: push
+on: workflow_dispatch
 
 env:
     CONTAINER_REGISTRY: docker.io
