@@ -1,0 +1,25 @@
+name: API + Debug Example
+
+on:
+    push:
+
+env:
+    ACTIONS_RUNNER_DEBUG: true
+    ACTIONS_STEP_DEBUG: true
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Print Debug Info
+              run: |
+                  echo "GitHub Actor: ${{ github.actor }}"
+                  echo "Repo: ${{ github.repository }}"
+                  echo "Event: ${{ github.event_name }}"
+
+            - name: Simulate Test
+              run: |
+                  echo "Running tests..."
+                  exit 0
